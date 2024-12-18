@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi, Kobe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .spotify-container {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            background-color: #f0f0f0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            flex-direction: column;
+            border: 2px solid #1DB954; 
+        }
+        .album-section {
+            width: 100%;
+            background-color: #1DB954;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            border-bottom: 2px solid #1DB954; 
+        }
+        .album-art {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        .song-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .song-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .artist {
+            font-size: 16px;
+            color: rgba(255,255,255,0.8);
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .play-button {
+            width: 70px;
+            height: 70px;
+            background-color: #1DB954;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .play-button:hover {
+            transform: scale(1.1);
+            background-color: #1aa34a;
+        }
+        .play-button svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+        .lyrics-section {
+            width: 100%;
+            padding: 20px;
+            background-color: white;
+        }
+        .lyrics-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .lyrics-container p {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 400;
+            color: black;
+        }
+        .lyrics-container p.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hidden {
+            visibility: hidden;
+            opacity: 0;
+        }
+        @media (min-width: 768px) {
+            .spotify-container {
+                flex-direction: row;
+                height: 80vh;
+            }
+            .album-section {
+                width: 40%;
+            }
+            .lyrics-section {
+                width: 60%;
+                overflow-y: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="spotify-container">
+        <div class="album-section">
+            <div class="album-art">👽</div>
+            <div class="song-info">
+                <p class="song-title">Sa'yo Lang Ang Tingin, Kobe</p>
+                <p class="artist">Chao</p>
+            </div>
+            <div class="controls">
+                <button class="play-button" onclick="playConfession()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="lyrics-section">
+            <div class="lyrics-container" id="lyrics-container">
+                <p class="hidden">U might find this message random since we aren't close and we don't even talk,</p>
+                <p class="hidden">but here I am, confessing something I've been meaning to say.</p>
+                <p class="hidden">I wanted to send this after the first semester and before the year ends.</p>
+                <p class="hidden">Why? Para dili ko ma awkward kung naay klase,</p>
+                <p class="hidden">and also because I want to say everything I've been holding back before the year 2025 starts—no regrets hehe.</p>
+                <p class="hidden">Kobe, I admire you. I don't know you well—honestly, I don't know much about you at all—</p>
+                <p class="hidden">but I admire how smart and dedicated you are when it comes to your studies.</p>
+                <p class="hidden">From what I've observed, you seem like a good person.</p>
+                <p class="hidden">And, well... I find you very pogi hahaha.</p>
+                <p class="hidden">Pag kauban nimo mga BH boys, ikaw jud ako una mapansin hahaha.</p>
+                <p class="hidden">This feeling started out of nowhere, and since then, I've been silently admiring you from afar.</p>
+                <p class="hidden">Kung kapansin ka dati sig panawag si Erika nimo, gina tuyo na niya kay kabalo man gud siya HAHAHHA</p>
+                <p class="hidden">Gina tuyo na niya kay pag naa ka sa akong duol kay dili ko makahinga ay. Wako kabalo ngano hahaha</p>
+                <p class="hidden">Btw, Kobe, I don't have any intentions or hopes of you reciprocating my feelings,</p>
+                <p class="hidden">and I'm not saying this to get a chance. I just wanted to express how I feel.</p>
+                <p class="hidden">If you have a girlfriend, please feel free to ignore this message,</p>
+                <p class="hidden">and don't worry—I won't bother you any further.</p>
+                <p class="hidden">Lastly, I hope dili nimo ikalat ang kani na confession 😞🙏🏻</p>
+                <p class="hidden">ayaw jud isaba bisan kinsa please huhuhuhu.</p>
+                <p class="hidden">Wala pd nako giingnan ako mga friends about ani HAHAHAHA.</p>
+                <p class="hidden">Na cringe-an ko sa gi title nako ani pero nabagay man gud siya sa song HAHAHAHA</p>
+                <p class="hidden">If you really want to know how I feel, just listen to this song.</p>
+                <p class="hidden">Thank you for reading, Kobe, and I hope you have a great day! Take care.</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic">
+        <source src="https://chawix-4.github.io/foryou/tingin.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function playConfession() {
+            const lyrics = document.querySelectorAll('.lyrics-container p');
+            const music = document.getElementById('backgroundMusic');
+            let index = 0;
+    
+            music.play();
+    
+            
+            function typeLine(lineElement, text, callback) {
+                let charIndex = 0;
+                lineElement.textContent = ''; 
+                lineElement.classList.remove('hidden');
+                lineElement.classList.add('visible');
+    
+                const typeInterval = setInterval(() => {
+                    if (charIndex < text.length) {
+                        lineElement.textContent += text[charIndex];
+                        charIndex++;
+                    } else {
+                        clearInterval(typeInterval);
+                        if (callback) callback();
+                    }
+                }, 50); 
+            }
+    
+           
+            function showNextLine() {
+                if (index < lyrics.length) {
+                    const currentLine = lyrics[index];
+                    const text = currentLine.dataset.text || currentLine.textContent;
+                    typeLine(currentLine, text, () => {
+                        index++;
+                        setTimeout(showNextLine, 1000); 
+                    });
+                }
+            }
+     
+            lyrics.forEach((line) => {
+                line.dataset.text = line.textContent;
+                line.textContent = ''; 
+            });
+            showNextLine();
+        }
+    
+        const playButton = document.querySelector('.play-button');
+        playButton.addEventListener('mouseenter', () => {
+            playButton.style.transform = 'scale(1.1)';
+        });
+        playButton.addEventListener('mouseleave', () => {
+            playButton.style.transform = 'scale(1)';
+        });
+    </script>
+    
+</body>
+</html>
